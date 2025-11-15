@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Historias | MOMENTOS NFL</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilos.css'>
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/FRONTEND/IMG/LogoMnflv2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/FRONTEND/IMG/LogoMnflv2.png">
+    <link rel="apple-touch-icon" href="/FRONTEND/IMG/LogoMnflv2.png">
+    <meta name="theme-color" content="#0b0b0b">
+</head>
+<body>
+    <style>
+        body {
+  background-color: #f8f9fa;
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+    </style>
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="EncabezadoSuperior">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="/FRONTEND/IMG/LogoMnflv2.png" alt="Logo NFL" width="40" height="40" class="d-inline-block align-text-top me-2">
+    </a>
+    <a class="navbar-brand fw-bold" href="index.html">MOMENTOS NFL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link active text-white" href="historias.html">HISTORIAS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="datos.html">DATOS CURIOSOS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="formularioInicio.html" target="_blank">DANOS TU APORTE A LA COMUNIDAD</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="juego.html">MINIJUEGOS</a></li>
+        
+      </ul>
+    </div>    
+  </div>
+ </nav>
+
+
+ 
+<!--DIV DE HISTORIAS-->
+ <section class="container my-5">
+    <h2 class="text-center text-primary fw-bold mb-4">Historias</h2>
+    <!-- Barra de búsqueda -->
+<div class="container mb-4">
+  <input id="filtroHistorias" 
+         type="text" 
+         class="form-control" 
+         placeholder="🔍 Buscar historia (ej. Super Bowl, Dolphins, Patriots...)">
+</div>
+<p id="mensajeNoResultados" class="text-center mt-3 text-danger" style="display:none;">
+  ⚠️ No se encontraron historias con ese término.
+</p>
+
+
+    <div class="row g-4" id="listaHistorias" data-aos="zoom-in">
+        <!-- Historia 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/Gonzalez.jpg" class="card-img-top" alt="Dolphins">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">El PRIMER COLOMBIANO EN LA NFL</h5>
+            <p class="card-text">Cristian Gonzalez.  A pesar de haber nacido en Texas,USA, pero de padres colombianos y con nacionalidad colombiana, llegó a la liga en el año 2023 al ser seleccionado  por los
+          New England Patriots, desde el momento que llegó a la liga ha mostrado el orgullo por sus nacionalidad. Juega en la posición de CornerBack y en su 3ra temporada
+          en la liga ya se destaca como uno de los mejores en su posición
+        </p>
+        <p>Imágen via NFL.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Historia 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/LouM.jpg" class="card-img-top" alt="Patriots">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">OLVIDADO POR MUCHO TIEMPO, PERO FUE EL PRIMERO</h5>
+            <p class="card-text">Ignacio Molinet(1904–1976), de padres españoles, pero nacido en Chaparra,Cuba, fue el primer jugador latinoamericano, 
+          en llegar a la NFL en 1927 por parte del ya extinto equipo de los Frankford Yellow Jackets, a pesar de esto no sería hasta el año 2000 que la NFL lo
+        reconocería como el primer latinoamericano y  se hizo conocer su historia   </p>
+        <p>Imágen via profootballhof.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Historia 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/primerPartido.jfif" class="card-img-top" alt="Mahomes">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">PRIMER PARTIDO JUGADO EN TERRITORIO LATINOAMERICANO</h5>
+            <p class="card-text">El 2 de octubre de 2005, 49ers y Cardinal jugarian el primer partido en territorio latinoamericano en el estadio Azteca de CDMX. 
+          El patido terminaría con victoria de los Cardinals 31-14, además el partido contó con una asistenica aprox. de 100.000 espectadores.
+        Esto abriría la puerta a posteriores juegos fuera del territorio estadounidense</p>
+        <p>Imágen via 49ers.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Historia 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/SaoPaulo2024.jpg" class="card-img-top" alt="Joe Montana">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">EL PRIMER PARTIDO  EN TERRITORIO SUDAMERICANO</h5>
+            <p class="card-text">El 6 de septiembre de 2024, Eagles y Packers jugaron el primer juego en sudamerica en el Arena Corinthians de Sao Paulo, la vicoria fue por parte de 
+          Eagles 34-29. El recibiemiento fue tan positivo que la nfl llegó a un acuerdo de traer un partido anual a Brasil por los siguientes 5 años.
+        </p>
+        <p>Imágen via NFL.com</p>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/ImagenBills.jpg" class="card-img-top" alt="Joe Montana">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">A VECES NO ES A LA TERCERA, NI A LA CUARTA</h5>
+            <p class="card-text">Buffalo Bills y el deshonroso antirrecord de haber perdido 4 finales de manera consecutiva desde 1991 hasta 1994, además de esto Bills nunca ha sido campeón 
+          y parece que el tan ansiado campeonato no llegará pronto.
+        </p>
+        <p>Imágen via reddit.com/r/nfl</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/DolphinsPS.jpg" class="card-img-top" alt="Joe Montana">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">LOS INVENCIBLES</h5>
+            <p class="card-text">En  la temporad 1972/73 los Miami Dolphins tendrían la que a dia de hoy es la única temporada perfecta en la historia de la NFl
+          sin derrotas en temporada regular y posteriormente se alzarian con el campeonato.</p>
+          <p>Imágen via NFL.com</p>
+          </div>
+        </div>
+      </div>
+
+
+ <div class="col-md-6 col-lg-4">
+        <div class="card historia-card h-100 shadow">
+          <img src="/FRONTEND/IMG/Tom_dempsey.jpg" class="card-img-top" alt="Joe Montana">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">TOM "PIERNA MARTILLO" DEMPSEY</h5>
+            <p class="card-text">Tom Dempsey (1947-202), fue un pateador durante la decada de los 70s que tenia una particularidad, y es que nació con una deformación la 
+                    cual hizo que su pie derecho no se terminara de desarrollar, aún así esto no lo detuvo de tener una gran carrera, se destacaba por la potencia de sus disparos
+                    e incluso con una anotación de 63 yardas en 1970 rompió para ese entonces el record de la liga, el cual se mantuvo vigente durante 43 años.
+                </p>
+                <p>Imágen via profootballhof.com</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+
+
+
+<footer class="text-center bg-danger text-white py-3 mt-4">
+        <p class="m-0 fw-bold">Este proyecto es de objetivo escolar. Todas las imágenes pertenecen a la liga. 2025 derechos reservados a sus respectivos dueños
+        
+        <a href="https://www.nfl.com/international" target="_blank" style="text-decoration: none;">
+        <p class="m-1 fw-bold">Sitio oficial de la NFL</p>
+        </a>
+        </p>
+</footer>
+
+
+
+ <script>
+    // ====== FILTRO DE HISTORIAS ======
+function initFiltroHistorias() {
+  const inputFiltro = document.getElementById("filtroHistorias");
+  const cards = document.querySelectorAll(".historia-card");
+  const mensaje = document.getElementById("mensajeNoResultados");
+  if (!inputFiltro || !cards.length) return; // si no es la página de historias, salir
+
+  const toggle = () => {
+    const texto = inputFiltro.value.trim().toLowerCase();
+    let visibles = 0;
+
+    cards.forEach(card => {
+      const titulo = card.querySelector(".card-title")?.textContent.toLowerCase() || "";
+      const textoCard = card.querySelector(".card-text")?.textContent.toLowerCase() || "";
+
+      const coincide = titulo.includes(texto) || textoCard.includes(texto);
+      // ocultamos/mostramos la COLUMNA que contiene la card
+      const col = card.closest('[class*="col-"]') || card.parentElement;
+      col.style.display = coincide ? "block" : "none";
+      if (coincide) visibles++;
+    });
+
+    if (mensaje) mensaje.style.display = visibles === 0 ? "block" : "none";
+  };
+
+  // filtra mientras escribes
+  inputFiltro.addEventListener("keyup", toggle);
+  // ejecuta una pasada inicial (por si hay valor pre-cargado)
+  toggle();
+}
+
+// Ejecutar cuando el DOM esté listo (y también si ya se cargó)
+if (document.readyState !== "loading") {
+  initFiltroHistorias();
+} else {
+  document.addEventListener("DOMContentLoaded", initFiltroHistorias);
+}
+ </script>  
+ <script>
+  AOS.init({
+    duration: 1000,   // duración de la animación (en milisegundos)
+    once: true        // se anima solo una vez
+  });
+</script> 
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
