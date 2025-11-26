@@ -10,9 +10,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="estilos.css">
 
-<link rel="icon" type="image/png" sizes="32x32" href="/FRONTEND/IMG/LogoMnflv2.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/FRONTEND/IMG/LogoMnflv2.png">
-    <link rel="apple-touch-icon" href="/FRONTEND/IMG/LogoMnflv2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./IMG/LogoMnflv2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./IMG/LogoMnflv2.png">
+    <link rel="apple-touch-icon" href="./IMG/LogoMnflv2.png">
     <meta name="theme-color" content="#0b0b0b">
 
 
@@ -86,19 +86,19 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="EncabezadoSuperior">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="/FRONTEND/IMG/LogoMnflv2.png" alt="Logo NFL" width="40" height="40" class="d-inline-block align-text-top me-2">
+      <img src="./IMG/LogoMnflv2.png" alt="Logo NFL" width="40" height="40" class="d-inline-block align-text-top me-2">
     </a>
-    <a class="navbar-brand fw-bold" href="index.html">MOMENTOS NFL</a>
+    <a class="navbar-brand fw-bold" href="./index.html">MOMENTOS NFL</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link text-white" href="index.html">INICIO</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="historias.html">HISTORIAS</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="datos.html">DATOS CURIOSOS</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="formularioInicio.html" target="_blank">DANOS TU APORTE A LA COMUNIDAD</a></li>
-        <li class="nav-item"><a class="nav-link active text-white" href="juego.html">MINIJUEGOS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./index.html">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./historias.html">HISTORIAS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./datos.html">DATOS CURIOSOS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./formularioInicio.html" target="_blank">DANOS TU APORTE A LA COMUNIDAD</a></li>
+        <li class="nav-item"><a class="nav-link active text-white" href="./juego.html">MINIJUEGOS</a></li>
         
       </ul>
     </div>    
@@ -129,151 +129,66 @@
 
 
  <script>
-    const jugadores = [
-      {
-        nombre: "patrick mahomes",
-        pistas: [
-          "Pista 1: Es quarterback.",
-          "Pista 2: Juega para los Kansas City Chiefs.",
-          "Pista 3: Ha ganado múltiples Super Bowls.",
-          "Pista 4: Usa el número 15."
-        ]
-      },
-      {
-        nombre: "tom brady",
-        pistas: [
-          "Pista 1: Es considerado el mejor de todos los tiempos.",
-          "Pista 2: Jugó la mayor parte de su carrera con los Patriots.",
-          "Pista 3: También jugó en los Buccaneers.",
-          "Pista 4: Tiene 7 anillos de Super Bowl."
-        ]
-      },
-      {
-        nombre: "aaron rodgers",
-        pistas: [
-          "Pista 1: Es quarterback.",
-          "Pista 2: Fue MVP de la NFL varias veces.",
-          "Pista 3: Jugó muchos años con los Packers.",
-          "Pista 4: Actualmente juega en los Steelers."
-        ]
-      },
-      {
-        nombre: "josh allen",
-        pistas: [
-          "Pista 1: Es quarterback.",
-          "Pista 2: Juega en la Conferencia Americana.",
-          "Pista 3: Es la estrella de los Buffalo Bills.",
-          "Pista 4: Usa el número 17."
-        ]
-      },
-      {
-        nombre: "saquon barkley",
-        pistas: [
-            "Pista 1 : Juega en la Conferencia Nacional" ,
-            "Pista 2: Es runningback",
-            "Pista 3 : Parte del grupo de las 2000 yardas" ,
-            "Pista 4: Juega en Philadelphia Eagles",
-            
-        ]
-        
-      },
-      {
-        nombre: "justin jefferson",
-        pistas: [
-          "Pista 1: Es receptor abierto.",
-          "Pista 2: Juega para los Minnesota Vikings.",
-          "Pista 3: Conocido por su celebración 'Griddy'.",
-          "Pista 4: Usa el número 18."
-        ]
-      },
-      {
-        nombre: "joe burrow",
-        pistas: [
-      "Pista 1: Juega para los Cincinnati Bengals.",
-      "Pista 2: Es quarterback.",
-      "Pista 3: Lleva el número 9.",
-      "Pista 4: Fue la primera selección del Draft 2020.",
-    ]
-      },
-      {
-     nombre: "micah parsons",
-    pistas: [
-      "Pista 1: Es linebacker.",
-      "Pista 2: Es una de las estrellas defensivas más dominantes.",
-      "Pista 3: Fue Novato Defensivo del Año en 2021.",
-      "Pista 4: Juega para los Dallas Cowboys."
-    ]
+    
+     let jugadorActual = null;
+  let indicePista = 0;
 
-      },
-      {
-      nombre: "travis kelce",
-      pistas: [
-      "Pista 1: Es tight end.",
-      "Pista 2: Juega con Patrick Mahomes.",
-      "Pista 3: Ha ganado múltiples Super Bowls.",
-      "Pista 4: Juega para los Kansas City Chiefs."
-    ]
-      },
-      {
-    nombre: "george kittle",
-    pistas: [
-      "Pista 1: Es tight end.",
-      "Pista 2: Conocido por su energía y carisma.",
-      "Pista 3: Es compañero de Brock Purdy.",
-      "Pista 4: Juega para los San Francisco 49ers."
-    ] 
-      },
-      {
-    nombre: "christian mccaffrey",
-    pistas: [
-      "Pista 1: Es running back.",
-      "Pista 2: Es conocido por su versatilidad corriendo y recibiendo.",
-      "Pista 3: Lideró la NFL en yardas totales en 2023.",
-      "Pista 4: Juega para los San Francisco 49ers."
-    ]
-      },
-      
-    ];
+  // Obtener jugador aleatorio desde API
+  async function cargarJugador() {
+    try {
+      const res = await fetch("http://localhost:3000/api/jugadores/random");
+      const data = await res.json();
 
-    let jugadorActual;
-    let indicePista;
+      jugadorActual = {
+        nombre: data.nombre.toLowerCase(),
+        pistas: [data.pista1, data.pista2, data.pista3, data.pista4]
+      };
 
-    function iniciarJuego() {
-      jugadorActual = jugadores[Math.floor(Math.random() * jugadores.length)];
       indicePista = 0;
       document.getElementById("pista").textContent = "";
       document.getElementById("resultado").textContent = "";
       document.getElementById("nuevoJuego").style.display = "none";
       document.getElementById("respuesta").value = "";
+    } catch (error) {
+      console.error("Error cargando jugador:", error);
+      document.getElementById("pista").textContent = "⚠ Error cargando jugador desde el servidor.";
     }
+  }
 
-    function comprobar() {
-      const respuesta = document.getElementById("respuesta").value.toLowerCase();
-      const pista = document.getElementById("pista");
-      const resultado = document.getElementById("resultado");
+  function iniciarJuego() {
+    cargarJugador();
+  }
 
-      if (respuesta === jugadorActual.nombre) {
-        resultado.textContent = "✅ ¡Correcto! Era " + jugadorActual.nombre.toUpperCase() + "!";
-        pista.textContent = "";
-        document.getElementById("nuevoJuego").style.display = "inline-block";
+  function comprobar() {
+    const respuesta = document.getElementById("respuesta").value.toLowerCase();
+    const pista = document.getElementById("pista");
+    const resultado = document.getElementById("resultado");
+
+    if (!jugadorActual) return;
+
+    if (respuesta === jugadorActual.nombre) {
+      resultado.textContent = "✅ ¡Correcto! Era " + jugadorActual.nombre.toUpperCase() + "!";
+      pista.textContent = "";
+      document.getElementById("nuevoJuego").style.display = "inline-block";
+    } else {
+      if (indicePista < jugadorActual.pistas.length) {
+        pista.textContent = jugadorActual.pistas[indicePista];
+        indicePista++;
       } else {
-        if (indicePista < jugadorActual.pistas.length) {
-          pista.textContent = jugadorActual.pistas[indicePista];
-          indicePista++;
-        } else {
-          resultado.textContent = "❌ No lo lograste. Era " + jugadorActual.nombre.toUpperCase() + ".";
-          document.getElementById("nuevoJuego").style.display = "inline-block";
-        }
+        resultado.textContent = "❌ No lo lograste. Era " + jugadorActual.nombre.toUpperCase() + ".";
+        document.getElementById("nuevoJuego").style.display = "inline-block";
       }
     }
+  }
 
-    function nuevoJuego() {
-      iniciarJuego();
-    }
-
+  function nuevoJuego() {
     iniciarJuego();
-  </script>
+  }
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  iniciarJuego();
+</script>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>

@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="estilos.css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="LogoMnflv2.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="LogoMnflv2.png">
-    <link rel="apple-touch-icon" href="LogoMnflv2.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./IMG/LogoMnflv2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./IMG/LogoMnflv2.png">
+    <link rel="apple-touch-icon" href="/docs/IMG/LogoMnflv2.png">
     <meta name="theme-color" content="#0b0b0b">
 
 
@@ -30,19 +31,19 @@
  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="EncabezadoSuperior">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="/FRONTEND/IMG/LogoMnflv2.png" alt="Logo NFL" width="40" height="40" class="d-inline-block align-text-top me-2">
+      <img src="./IMG/LogoMnflv2.png" alt="Logo NFL" width="40" height="40" class="d-inline-block align-text-top me-2">
     </a>
-    <a class="navbar-brand fw-bold" href="index.html">MOMENTOS NFL</a>
+    <a class="navbar-brand fw-bold" href="./index.html">MOMENTOS NFL</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link text-white" href="index.html">INICIO</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="historias.html">HISTORIAS</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="datos.html">DATOS CURIOSOS</a></li>
-        <li class="nav-item"><a class="nav-link active text-white" href="formularioInicio.html" target="_blank">DANOS TU APORTE A LA COMUNIDAD</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="juego.html">MINIJUEGOS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./index.html">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./historias.html">HISTORIAS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./datos.html">DATOS CURIOSOS</a></li>
+        <li class="nav-item"><a class="nav-link active text-white" href="./formularioInicio.html" target="_blank">DANOS TU APORTE A LA COMUNIDAD</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./juego.html">MINIJUEGOS</a></li>
         
       </ul>
     </div>    
@@ -123,83 +124,18 @@
     </div>
   </div>
 <script>
-  AOS.init({
-    duration: 1000,   // duración de la animación (en milisegundos)
-    once: true        // se anima solo una vez
-  });
-</script> 
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
 
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Tu JS general (expansión de imagen + equipos + lo que tengas) -->
+    <script src="./scripts.js"></script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script básico -->
   
-<script >
-  const registerForm = document.getElementById("registerForm");
-const loginForm = document.getElementById("loginForm");
-
-// --- REGISTRO ---
-if (registerForm) {
-  registerForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const nombre = document.getElementById("registerName").value.trim();
-    const email = document.getElementById("registerEmail").value.trim();
-    const equipo = document.getElementById("registerTeam").value;
-    const password = document.getElementById("registerPassword").value.trim();
-
-    if (!nombre || !email || !equipo || !password) {
-      alert("Por favor completa todos los campos.");
-      return;
-    }
-
-    // Guardar datos en localStorage
-    const userData = { nombre, email, equipo, password };
-    localStorage.setItem("usuarioNFL", JSON.stringify(userData));
-
-    alert("✅ Registro exitoso. Ahora puedes iniciar sesión.");
-    registerForm.reset();
-  });
-}
-
-// --- INICIO DE SESIÓN ---
-if (loginForm) {
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-
-    const storedUser = JSON.parse(localStorage.getItem("usuarioNFL"));
-
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-      alert(`Bienvenido de nuevo, ${storedUser.nombre} 🏈`);
-      window.location.href = "index.html";
-    } else {
-      alert("❌ Correo o contraseña incorrectos.");
-    }
-  });
-}
-    const equiposNFL = [
-    "Arizona Cardinals", "Atlanta Falcons", "Baltimore Ravens", "Buffalo Bills",
-    "Carolina Panthers", "Chicago Bears", "Cincinnati Bengals", "Cleveland Browns",
-    "Dallas Cowboys", "Denver Broncos", "Detroit Lions", "Green Bay Packers",
-    "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Kansas City Chiefs",
-    "Las Vegas Raiders", "Los Angeles Chargers", "Los Angeles Rams", "Miami Dolphins",
-    "Minnesota Vikings", "New England Patriots", "New Orleans Saints", "New York Giants",
-    "New York Jets", "Philadelphia Eagles", "Pittsburgh Steelers", "San Francisco 49ers",
-    "Seattle Seahawks", "Tampa Bay Buccaneers", "Tennessee Titans", "Washington Commanders"
-  ];
-
-  const selectEquipo = document.getElementById("registerTeam");
-  equiposNFL.forEach(equipo => {
-    const option = document.createElement("option");
-    option.value = equipo;
-    option.textContent = equipo;
-    selectEquipo.appendChild(option);
-  });
-</script>
+  </body>
 </html>
