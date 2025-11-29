@@ -10,64 +10,79 @@ if (imagenModal && imagenExpandida) {
   });
 }
 
-// Obtener formularios
-const registerForm = document.getElementById("registerForm");
-const loginForm = document.getElementById("loginForm");
 
-// ---------------------- REGISTRO ----------------------
-if (registerForm) {
-  registerForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
 
-    const userData = {
-      nombre: document.getElementById("registerName").value,
-      email: document.getElementById("registerEmail").value,
-      equipo: document.getElementById("registerTeam").value,
-      password: document.getElementById("registerPassword").value
-    };
+// ---------- LOGIN / REGISTRO ----------
 
-    const res = await fetch("http://localhost:3000/api/users/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userData)   // ← FIX
+document.addEventListener("DOMContentLoaded", () => {
+  const registerForm = document.getElementById("registerForm");
+  const loginForm = document.getElementById("loginForm");
+
+  // REGISTRO
+  if (registerForm) {
+    registerForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const userData = {
+        nombre: document.getElementById("registerName").value.trim(),
+        email: document.getElementById("registerEmail").value.trim(),
+        equipo: document.getElementById("registerTeam").value,
+        password: document.getElementById("registerPassword").value.trim(),
+      };
+
+      try {
+        const res = await fetch("http://localhost:3000/api/users/registrar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert(data.message || "Registro exitoso");
+          registerForm.reset();
+        } else {
+          alert(data.error || data.message || "Error al registrarse");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error de conexión con el servidor");
+      }
     });
+  }
 
-    const data = await res.json();
+  // LOGIN
+  if (loginForm) {
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    if (res.ok) {
-      alert("Registro exitoso");
-      registerForm.reset();
-    } else {
-      alert(data.error);
-    }
-  });
-}
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
 
-// ---------------------- LOGIN ----------------------
-if (loginForm) {
-  loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+      try {
+        const res = await fetch("http://localhost:3000/api/users/logear", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
 
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+        const data = await res.json();
 
-    const res = await fetch("http://localhost:3000/api/users/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
+        if (res.ok) {
+          localStorage.setItem("usuarioNFL", JSON.stringify(data.user));
+          alert(data.message || "Bienvenido " + data.user.nombre);
+          window.location.href = "./index.html";
+        } else {
+          alert(data.error || data.message || "Correo o contraseña incorrectos");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error de conexión con el servidor");
+      }
     });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      localStorage.setItem("usuarioNFL", JSON.stringify(data.user));
-      alert("Bienvenido " + data.user.nombre);
-      window.location.href = "./index.html";
-    } else {
-      alert(data.error);
-    }
-  });
-}
+  }
+});
 
 // ---------------------- SELECT EQUIPOS ----------------------
 const equiposNFL = [
