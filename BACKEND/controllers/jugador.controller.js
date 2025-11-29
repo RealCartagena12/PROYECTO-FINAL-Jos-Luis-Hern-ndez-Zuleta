@@ -73,25 +73,22 @@ exports.getJugadorById = async (req, res) => {
 // Obtener un jugador aleatorio
 exports.getRandomJugador = async (req, res) => {
     try {
-        const count = await Jugador.countDocuments();
+        const jugadores = await Jugador.aggregate([
+            { $sample: { size: 1 } }
+        ]);
 
-        if (count === 0) {
+        if (!jugadores || jugadores.length === 0) {
             return res.status(404).json({
                 error: "No hay jugadores registrados en la base de datos."
             });
         }
 
-        const random = Math.floor(Math.random() * count);
-        const jugador = await Jugador.findOne().skip(random);
-
-        res.json(jugador);
-
+        res.json(jugadores[0]); 
     } catch (error) {
-        console.error("Error al obtener jugador aleatorio:", error);
+        console.error("Error al obtener un jugador aleatorio:", error);
         res.status(500).json({ error: "Error al obtener un jugador aleatorio" });
     }
 };
-
 
 // Actualizar un jugador
 exports.updateJugador = async (req, res) => {
