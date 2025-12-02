@@ -14,7 +14,7 @@ const app = express();
 
 
 
-// ------------------ CORS (AHORA SÍ FUNCIONA) ------------------
+// CORS 
 app.use(cors({
     origin: ["http://127.0.0.1:5500", "null"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -22,20 +22,6 @@ app.use(cors({
 }));
 
 
-
-// Middleware manual adicional (opcional)
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-    if (req.method === "OPTIONS") {
-        return res.sendStatus(200);
-    }
-    next();
-});
-
-// --------------------------------------------------------------
 
 // Parseo JSON
 app.use(express.json());
@@ -47,10 +33,12 @@ connectDB();
 app.use("/api/users", userRoutes);
 app.use("/api/jugadores", jugadorRoutes);
 
+
 // Comprobar estado del server
 app.get("/api/health", (req, res) => {
     res.json({ status: "OK", timestamp: new Date() });
 });
+
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
