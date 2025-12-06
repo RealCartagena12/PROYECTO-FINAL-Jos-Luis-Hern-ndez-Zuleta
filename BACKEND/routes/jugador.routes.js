@@ -3,6 +3,7 @@ const router = express.Router();
 const jugadorController = require('../controllers/jugador.controller');
 
 
+
 // RUTAS  Jugador
 router.post('/', jugadorController.createJugador);
 router.get('/', jugadorController.getJugadores);

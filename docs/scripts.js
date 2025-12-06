@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await res.json();
 
         if (res.ok) {
+          localStorage.setItem("token", data.token);
           localStorage.setItem("usuarioNFL", JSON.stringify(data.user));
           alert(data.message || "Bienvenido " + data.user.nombre);
           window.location.href = "./index.html";
@@ -83,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 // ---------------------- SELECT EQUIPOS ----------------------
 const equiposNFL = [

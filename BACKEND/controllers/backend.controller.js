@@ -1,4 +1,5 @@
 const User = require('../models/backend.model');
+const jwt = require('jsonwebtoken');
 
 //  REGISTRO 
 exports.register = async (req, res) => {
@@ -43,10 +44,19 @@ exports.login = async (req, res) => {
       return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
     }
 
+    const token = jwt.sign(
+      { id: user._id, 
+       email: user.email},
+      process.env.JWT_SECRET,
+      { expiresIn: '2h' }
+    );
+
     // Si todo bien
     res.json({
       message: 'Login exitoso',
+      token,
       user: {
+        id: user._id,
         nombre: user.nombre,
         email: user.email,
         equipo: user.equipo,
@@ -57,4 +67,5 @@ exports.login = async (req, res) => {
     res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 

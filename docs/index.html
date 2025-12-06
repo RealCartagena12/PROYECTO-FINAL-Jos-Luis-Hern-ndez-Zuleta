@@ -281,6 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("logoutBtn").addEventListener("click", () => {
       localStorage.removeItem("usuarioNFL");
+      localStorage.removeItem("token");
       alert("Has cerrado sesión correctamente.");
       window.location.href = "formularioInicio.html";
     });
